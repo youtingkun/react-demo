@@ -5,9 +5,9 @@ import {HashRouter ,Route,Switch,Redirect } from 'react-router-dom'
 import Login from './pages/login/index';
 import Home from './pages/home/index';
 import Dashboard from './pages/dashboard/index'
-import Children from './pages/children/index'
 import Layout from './components/layout/index'
 import NotFind from './pages/404/index';
+import ReduxDemo from './pages/redux-demo/index'
 
 
 function App() {
@@ -36,14 +36,16 @@ function App() {
                 <Layout>
                     <Switch>
                         <Route path='/index' exact component={Dashboard}></Route>
+                        <Route path='/index/:name' exact component={Dashboard}></Route>
                         <Route path="/home"  component={Home}></Route>
+                        <Route path='/redux' component={ReduxDemo}></Route>
                         <Redirect from="*" to="/404" />
                     </Switch>
                 </Layout>
             </Route>
+            
           </Switch>
       </HashRouter>
-   
   );
 }
 
