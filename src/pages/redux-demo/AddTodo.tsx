@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../../store/actions";
+import {Button} from 'antd'
 
 
 
@@ -22,20 +23,25 @@ class AddTodo extends React.Component<any,any> {
   render() {
     return (
       <div>
+          <div>{this.props.activeFilter}</div>
         <input
           onChange={e => this.updateInput(e.target.value)}
           value={this.state.input}
         />
-        <button className="add-todo" onClick={this.handleAddTodo}>
+        <Button className="add-todo" onClick={this.handleAddTodo}>
           Add Todo
-        </button>
+        </Button>
       </div>
     );
   }
 }
 
+const mapStateToProps = (state:any) => {
+    return { activeFilter: state.visibilityFilter };
+  };
+
 export default connect(
-  null,
+    mapStateToProps,
   { addTodo }
 )(AddTodo);
 // export default AddTodo;

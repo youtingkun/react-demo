@@ -5,9 +5,7 @@ interface IProps {
 type HomeProps = IProps & RouteComponentProps;
 
 class Dashboard extends React.Component<HomeProps>{
-    constructor(props:any){
-        super(props)
-    }
+    
     componentDidMount(){
         //地址栏跳转传参
         console.log(this.props.match.params);

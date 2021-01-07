@@ -4,13 +4,16 @@ export const SET_FILTER = "SET_FILTER";
 
 let nextTodoId = 0;
 
-export const addTodo = (content:any) => ({
-  type: ADD_TODO,
-  payload: {
-    id: ++nextTodoId,
-    content
-  }
-});
+export const addTodo = (content:any) => {
+    return {
+        type: ADD_TODO,
+        payload: {
+          id: ++nextTodoId,
+          content
+        }
+    }
+  
+};
 
 export const toggleTodo = (id:any) => ({
   type: TOGGLE_TODO,
@@ -18,5 +21,4 @@ export const toggleTodo = (id:any) => ({
 });
 
 export const setFilter = (filter:any) => ({ 
-    type: SET_FILTER, payload: { filter } 
-});
+    type: SET_FILTER, payload: { filter } });

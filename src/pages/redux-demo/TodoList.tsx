@@ -29,7 +29,6 @@ const TodoList = ({ todos }:any) => (
 // };
 
 const mapStateToProps = (state:any) => {
-    console.log("页面当中获取的数据：",state)
   const { visibilityFilter } = state;
   const todos = getTodosByVisibilityFilter(state, visibilityFilter);
   return { todos };
