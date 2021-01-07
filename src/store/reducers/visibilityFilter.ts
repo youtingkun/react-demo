@@ -1,7 +1,6 @@
-import { SET_FILTER } from "../actionTypes";
-import { VISIBILITY_FILTERS } from "../constants";
+export const SET_FILTER = "SET_FILTER";
 
-const initialState = VISIBILITY_FILTERS.ALL;
+const initialState = 'all'
 
 const visibilityFilter = (state = initialState, action:any) => {
   switch (action.type) {

@@ -39,7 +39,7 @@ function App() {
                         <Route path='/index/:name' exact component={Dashboard}></Route>
                         <Route path="/home"  component={Home}></Route>
                         <Route path='/redux' component={ReduxDemo}></Route>
-                        <Redirect from="*" to="/404" />
+                        <Redirect from="*" to="/redux" />
                     </Switch>
                 </Layout>
             </Route>

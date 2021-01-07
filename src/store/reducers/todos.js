@@ -1,4 +1,6 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+export const ADD_TODO = "ADD_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const SET_FILTER = "SET_FILTER";
 
 const initialState = {
   allIds: [],
@@ -8,6 +10,7 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_TODO: {
+        console.log("reducers中ADD_TODO获得的数据",state,action);
       const { id, content } = action.payload;
       return {
         ...state,

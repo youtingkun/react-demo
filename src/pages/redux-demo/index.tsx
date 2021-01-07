@@ -8,7 +8,6 @@ class ReduxDemo extends React.Component {
     render(){
         return(
             <div className="todo-app">
-                <h1>Todo List</h1>
                 <AddTodo />
                 <TodoList />
                 <VisibilityFilters />

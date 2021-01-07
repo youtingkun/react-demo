@@ -3,16 +3,20 @@ import { connect } from "react-redux";
 import Todo from "./Todo";
 // import { getTodos } from "../redux/selectors";
 import { getTodosByVisibilityFilter } from "../../store/selectors";
-import { VISIBILITY_FILTERS } from "../../store/constants";
 
 const TodoList = ({ todos }:any) => (
-  <ul className="todo-list">
-    {todos && todos.length
-      ? todos.map((todo:any, index:any) => {
-          return <Todo key={`todo-${todo.id}`} todo={todo} />;
-        })
-      : "No todos, yay!"}
-  </ul>
+    <div>
+       <div>
+            {JSON.stringify(todos)}
+        </div>
+        <ul className="todo-list">
+            {todos && todos.length
+            ? todos.map((todo:any, index:any) => {
+                return <Todo key={`todo-${todo.id}`} todo={todo} />;
+                })
+            : "No todos, yay!"}
+        </ul>
+  </div>
 );
 
 // const mapStateToProps = state => {
@@ -25,6 +29,7 @@ const TodoList = ({ todos }:any) => (
 // };
 
 const mapStateToProps = (state:any) => {
+    console.log("页面当中获取的数据：",state)
   const { visibilityFilter } = state;
   const todos = getTodosByVisibilityFilter(state, visibilityFilter);
   return { todos };

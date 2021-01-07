@@ -1,4 +1,8 @@
-import { VISIBILITY_FILTERS } from "./constants";
+export const VISIBILITY_FILTERS = {
+    ALL: "all",
+    COMPLETED: "completed",
+    INCOMPLETE: "incomplete"
+  };
 
 export const getTodosState = (store) => store.todos;
 
