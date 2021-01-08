@@ -28,9 +28,11 @@ export function setFilter(filter:any){
 };
 
 export function asyncAddTodo(content:any){
-    return (dispatch:any) => {
+    return (dispatch:any,getState:any) => {
+        console.log(dispatch,getState());
+     
         setTimeout(() => {
-          dispatch(addTodo(content));
+            dispatch(addTodo(content));
         }, 5000);
       }
 }
