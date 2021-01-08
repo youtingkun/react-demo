@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addTodo } from "../../store/actions";
+import { addTodo, asyncAddTodo } from "../../store/actions";
 import {Button} from 'antd'
 
 
@@ -19,6 +19,10 @@ class AddTodo extends React.Component<any,any> {
     this.props.addTodo(this.state.input);
     this.setState({ input: "" });
   };
+  handleAsyncAction=()=>{
+    this.props.asyncAddTodo(this.state.input);
+    this.setState({ input: "" });
+  }
 
   render() {
     return (
@@ -31,6 +35,7 @@ class AddTodo extends React.Component<any,any> {
         <Button className="add-todo" onClick={this.handleAddTodo}>
           Add Todo
         </Button>
+        <Button onClick={this.handleAsyncAction}>async action</Button>
       </div>
     );
   }
@@ -42,6 +47,6 @@ const mapStateToProps = (state:any) => {
 
 export default connect(
     mapStateToProps,
-  { addTodo }
+  { addTodo,asyncAddTodo }
 )(AddTodo);
 // export default AddTodo;

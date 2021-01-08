@@ -6,9 +6,7 @@ import { getTodosByVisibilityFilter } from "../../store/selectors";
 
 const TodoList = ({ todos }:any) => (
     <div>
-       <div>
-            {JSON.stringify(todos)}
-        </div>
+       
         <ul className="todo-list">
             {todos && todos.length
             ? todos.map((todo:any, index:any) => {
