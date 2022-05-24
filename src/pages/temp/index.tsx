@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, withRouter, RouteComponentProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 interface IProps {}
-type HomeProps = IProps & RouteComponentProps;
+type HomeProps = IProps;
 interface IState {}
 
 class Temp extends React.Component<HomeProps, IState> {
@@ -51,4 +51,4 @@ class Temp extends React.Component<HomeProps, IState> {
   }
 }
 
-export default withRouter(Temp);
+export default Temp;

@@ -1,18 +1,17 @@
-import React from 'react';
-import './index.scss'
+import React from "react";
+import "./index.scss";
+import { Outlet } from "react-router-dom";
 
-class Layout extends React.Component{
-    render(){
-        return(
-            <div className='main'>
-            <div className='left'></div>
-            <div className='right'>
-                <div className='nav'></div>
-                {this.props.children}
-            </div>
-            </div>
-        )
-    }
+function Layout() {
+  return (
+    <div className="main">
+      <div className="left"></div>
+      <div className="right">
+        <div className="nav"></div>
+        <Outlet />
+      </div>
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;
