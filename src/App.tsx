@@ -1,8 +1,10 @@
 import "./App.css";
 import { useRoutes } from "react-router-dom";
-import routes from "@/routes";
+import { useRoutesData } from "@/routes";
 
 function App() {
+  const routes = useRoutesData();
+
   let element = useRoutes(routes);
   return element;
 }
